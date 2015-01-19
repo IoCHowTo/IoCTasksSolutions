@@ -1,3 +1,3 @@
-# IoCTaskSolutions
+# IoCTasksSolutions
 
-This solution contains sample projects that solves the tasks defined in the IoCTasks solution.
+This repository contains sample solutions for tasks from [https://github.com/IoCHowTo/IoCTasks](https://github.com/IoCHowTo/IoCTasks)
