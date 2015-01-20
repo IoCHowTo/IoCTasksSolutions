@@ -19,6 +19,12 @@
 
 * There are two ways how to fix the issue - try to find both of them.
 
+## Sample solution
+
+* First solution here is to register ```IConsoleAndFileResultWriter``` with its appropriate implementation in the ```Bootstrapper``` class.
+* The second possibility is to use a concrete type as a parameter of ```BuildUp()``` method so it will look like this:
+  * ```ConsoleAndFileResultWriter resultWriter = new ConsoleAndFileResultWriter("output.txt");```
+
 ## Solution
 
 * For more info about the sample solution please see IoCTaskSolutions, project 100_UnityBuildUpIssue.

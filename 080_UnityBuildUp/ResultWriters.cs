@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Microsoft.Practices.Unity;
 
 namespace UnityBuildUp
 {
@@ -18,18 +19,23 @@ namespace UnityBuildUp
         }
     }
 
-    // TODO: Alter the constructor so you can specify a file name
-    // TODO: and use technique which will allow you to use BuildUp method
     public class ConsoleAndFileResultWriter : IDisposable
     {
-        private readonly IConsoleResultWriter _consoleResultWriter;
+        private IConsoleResultWriter _consoleResultWriter;
         private readonly StreamWriter _output;
 
-        public ConsoleAndFileResultWriter(string fileName, IConsoleResultWriter consoleResultWriter)
+        public ConsoleAndFileResultWriter(string fileName)
         {
-            _consoleResultWriter = consoleResultWriter;
             _output = File.CreateText(fileName);
         }
+
+        [Dependency]
+        public IConsoleResultWriter ConsoleResultWriter
+        {
+            get { return _consoleResultWriter; }
+            set { _consoleResultWriter = value; }
+        }
+
 
         public void WriteResult(int value)
         {

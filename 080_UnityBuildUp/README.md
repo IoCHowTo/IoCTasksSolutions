@@ -17,6 +17,12 @@
   * Define a property or method injection to get ```IConsoleResultWriter``` injected.
 4. Open ```Program``` class and adjust the code related to ```ConsoleAndFileResultWriter``` class instantiation so it benefits from ```IUnityContainer.BuildUp()``` method.
 
+## Sample solution
+
+* The actual solution is very simple:
+  * ```ConsoleAndFileResultWriter``` needs to be adjusted to inject ```IConsoleResultWriter``` via a property injection.
+  * In the ```Program``` class create an instance and call for it ```IUnityContainer.BuildUp()``` method.
+
 ## Solution
 
 * For more info about the sample solution please see IoCTaskSolutions, project 080_UnityBuildUp.

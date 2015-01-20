@@ -16,6 +16,9 @@ namespace UnityBuildUpIssue
         {
             unityContainer
                 .RegisterType<IConsoleResultWriter, ConsoleResultWriter>()
+                // This is the first way of how to fix the issue - simply
+                // register the interface and its implementation
+                // .RegisterType<IConsoleAndFileResultWriter, ConsoleAndFileResultWriter>()
                 .RegisterType<ICalculator, Calculator>()
                 .RegisterType<IOperationFactory, OperationFactory>()
                 .RegisterType<IOperationPlus, Plus>();
