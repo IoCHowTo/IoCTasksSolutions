@@ -18,8 +18,8 @@ namespace UnityBuildUpIssue
                 var calculator = container.Resolve<ICalculator>();
                 int result = calculator.Evaluate(args);
 
-                // TODO: Fix the NullReferenceException issue
-                IConsoleAndFileResultWriter resultWriter = new ConsoleAndFileResultWriter("output.txt");
+                // This is the second possible solution - use a concrete type for variable passed to BuildUp method
+                ConsoleAndFileResultWriter resultWriter = new ConsoleAndFileResultWriter("output.txt");
                 resultWriter = container.BuildUp(resultWriter);
 
                 resultWriter.WriteResult(result);
