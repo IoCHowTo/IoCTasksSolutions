@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 
 namespace UnityChildContainers
@@ -16,9 +17,16 @@ namespace UnityChildContainers
             {
                 Bootstrapper.SetupContainer(container);
 
-                // Since the Minus class is registered only in the child container
-                // the default expression cannot be evaluated on the root container
-                PerformCalculation(args, container);
+                try
+                {
+                    PerformCalculation(args, container);
+                }
+                catch (Exception exception)
+                {
+                    // Since the Minus class is registered only in the child container
+                    // the default expression cannot be evaluated on the root container
+                    Console.WriteLine(exception);
+                }
 
                 using (var childContainer = container.CreateChildContainer())
                 {
