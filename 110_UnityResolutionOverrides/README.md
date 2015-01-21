@@ -25,7 +25,19 @@
 ## Extras
 
 * Try to use different override types to get familiar with them.
-* Try add another ```string``` argument to ```ConsoleAndFileResultWriter``` class constructor (for example prefix which will be written to output) and see how different override types affect the behavior.
+* Try add another ```string``` argument to ```ConsoleAndFileResultWriter``` class constructor (for example prefix which will be written to output) and see 
+  how different override types affect the behavior.
+
+## Sample solution
+
+* First solution (in this case better one) is to use ```ParameterOverride``` as outlined in ```Program``` class.
+  * It is good idea to limit the scope of override to the resolved class.
+  * Keep in mind that you are creating tight coupling in the code thus always consolidate all usages into a single place (factory method).
+* Second solution is to override by type as outlined in ```Program``` class.
+  * This will not work for updated ```ConsoleAndFileResultWriter```.
+  * You should always consider whether you expect that all dependencies of the given type should be overriden and perhaps
+    limit the scope of override to a concrete type.
+  * Keep in mind that you are creating tight coupling in the code thus always consolidate all usages into a single place (factory method).
 
 ## Solution
 

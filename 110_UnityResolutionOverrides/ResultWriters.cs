@@ -23,11 +23,13 @@ namespace UnityResolutionOverrides
 
     public class ConsoleAndFileResultWriter : IConsoleAndFileResultWriter, IDisposable
     {
+        private readonly string _context;
         private readonly IConsoleResultWriter _consoleResultWriter;
         private readonly StreamWriter _output;
 
-        public ConsoleAndFileResultWriter(string fileName, IConsoleResultWriter consoleResultWriter)
+        public ConsoleAndFileResultWriter(string fileName, string context, IConsoleResultWriter consoleResultWriter)
         {
+            _context = context;
             _consoleResultWriter = consoleResultWriter;
             _output = File.CreateText(fileName);
         }
@@ -35,7 +37,7 @@ namespace UnityResolutionOverrides
         public void WriteResult(int value)
         {
             _consoleResultWriter.WriteResult(value);
-            _output.WriteLine(value);
+            _output.WriteLine(_context + ":" + value);
         }
 
         public void Dispose()
