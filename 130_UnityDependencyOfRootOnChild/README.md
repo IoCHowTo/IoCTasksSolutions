@@ -34,6 +34,11 @@
    * Also check the content of logging files - you may find out that it is not
      exactly you may expect.
 
+## Extras
+
+* Try to use the UnityRegistrationValidator extension to see how that can help
+  to predict the issue.
+
 ## Sample solution
 
 * The issue here is exactly what is described above:
