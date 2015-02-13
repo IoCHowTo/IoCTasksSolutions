@@ -19,8 +19,12 @@
   * Factory.
   * Calculator class itself covers the internal logic via Moq library which
     allows you to focus on algorithm. You do not have to deal with every 
-	single operator which is making the difference when compared to 
-	090_UnitTestingWithoutIoC.
+    single operator which is making the difference when compared to 
+    090_UnitTestingWithoutIoC.
+* As you can see from tests - calculator is now independent on the 
+  ```IOperationFactory``` factory implementation (including unit tests) and
+  consumer can safely provide a custom one if you wish.
+  
 * The sample also demonstrates usage of the Moq unit test framework.
 
 ## Solution
