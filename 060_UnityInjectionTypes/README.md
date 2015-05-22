@@ -7,7 +7,8 @@
   * Dependencies are specified as parameters of the constructor.
   * If multiple constructors exist on the class by default the constructor with 
     most dependencies is used.
-  * Or you can define a constructor by decorating it with ```InjectionConstructorAttribute``` .
+  * Or you can define a constructor by decorating it with 
+    ```InjectionConstructorAttribute``` .
 
 ### Property injection
 
@@ -48,7 +49,8 @@
 ## Sample solution
 
 * The basic solution is just about altering the ```OperationFactory``` class.
-  * Please note ```InjectionConstructorAttribute``` on one of the constructors - this is here to select proper constructor.
+  * Please note ```InjectionConstructorAttribute``` on one of the constructors -
+    this is here to select proper constructor.
 * Order of injections is this:
   * Constructor.
   * Properties.

@@ -36,13 +36,19 @@ IOperation, e.g. Minus.
 
 ## Sample solution
 
-* As you can see on ```Calculator``` class we reverted the responsibility for creation of ```OperationFactory``` outside the class.
-  * Further we replaced the concrete class ```OperationFactory``` with an interface ```IOperationFactory```.
-  * This way it is much easier to unit test the ```Calculator``` class since you can just provide some mocked instance with configured expectations.
-  * Also the ```Calculator``` consumer can provide own implementation with custom operations which is great.
+* As you can see on ```Calculator``` class we reverted the responsibility for 
+  creation of ```OperationFactory``` outside the class.
+  * Further we replaced the concrete class ```OperationFactory``` with an 
+    interface ```IOperationFactory```.
+  * This way it is much easier to unit test the ```Calculator``` class since you
+    can just provide some mocked instance with configured expectations.
+  * Also the ```Calculator``` consumer can provide own implementation with 
+    custom operations which is great.
 * Also we implemented ```Minus``` operator.
-* In order to demonstrate the easiness of IoC container creation we implemented ```Container``` class which is responsible for providing instances on demand.
-  * This is of course far from Microsoft Unity provides but should give you high level idea what this is about.
+* In order to demonstrate the easiness of IoC container creation we implemented
+  ```Container``` class which is responsible for providing instances on demand.
+  * This is of course far from Microsoft Unity provides but should give you high
+    level idea what this is about.
 
 ## Solution
 * For more info about the sample solution please see IoCTaskSolutions, project 

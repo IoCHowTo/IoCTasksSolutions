@@ -18,8 +18,9 @@
 
 ## Sample solution
 
-* The issue here is in method ```BackgroundFileResultWriter.BackgroundWriter()```
-  which does not handle ```_shutdown``` event properly.
+* The issue here is in method 
+  ```BackgroundFileResultWriter.BackgroundWriter()``` which does not handle 
+  ```_shutdown``` event properly.
 * Also, depending on use case, it may be good idea to set a timeout when 
   waiting for thread termination.
 

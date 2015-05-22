@@ -2,11 +2,16 @@
 
 ## BuildUp method
 
-* In some situations it is necessary to instantiate a class manually in the code via ```new``` operator.
+* In some situations it is necessary to instantiate a class manually in the code
+  via ```new``` operator.
   * For example when specifying some argument like file name etc.
-* But the class itself still can have dependencies which can be resolved via IoC container.
-* Microsoft Unity supports this scenario via its ```IUnityContainer.BuildUp()``` method:
-  * Please note that if the class you are trying to *build-up* is not registered within the unity the dependencies are resolved using the type of argument passed to the method.
+* But the class itself still can have dependencies which can be resolved via IoC
+  container.
+* Microsoft Unity supports this scenario via its ```IUnityContainer.BuildUp()```
+  method:
+  * Please note that if the class you are trying to *build-up* is not registered
+    within the unity the dependencies are resolved using the type of argument 
+	passed to the method.
 
 ## How to start?
 
@@ -21,11 +26,15 @@
 
 ## Sample solution
 
-* First solution here is to register ```IConsoleAndFileResultWriter``` with its appropriate implementation in the ```Bootstrapper``` class.
-* The second possibility is to use a concrete type as a parameter of ```BuildUp()``` method so it will look like this:
+* First solution here is to register ```IConsoleAndFileResultWriter``` with its
+  appropriate implementation in the ```Bootstrapper``` class.
+* The second possibility is to use a concrete type as a parameter of 
+  ```BuildUp()``` method so it will look like this:
   * ```ConsoleAndFileResultWriter resultWriter = new ConsoleAndFileResultWriter("output.txt");```
 
 ## Solution
 
-* For more info about the sample solution please see IoCTaskSolutions, project 100_UnityBuildUpIssue.
-* Read the comments throughout the code carefully, they contain important informations in regards inversion of control and dependency injection.
+* For more info about the sample solution please see IoCTaskSolutions, project
+  100_UnityBuildUpIssue.
+* Read the comments throughout the code carefully, they contain important 
+  informations in regards inversion of control and dependency injection.

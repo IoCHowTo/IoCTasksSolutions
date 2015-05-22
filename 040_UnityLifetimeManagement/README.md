@@ -51,11 +51,19 @@
 
 ## Sample solution
 
-* This can be as simple as adding ```new ContainerControlledLifetimeManager()``` into ```Bootstrapper.SetupChildContainer()```.
-* Think about the consequences whether you will or will not move the registration into ```Bootstrapper.SetupContainer()``` method.
-  * The point simply now is that the ```FileResultWriter``` is ```IDisposable```.
-  * Since its lifetime is now managed by the child container (```ContainerControllerLifetimeManager```) it is disposed as a part of child container disposal.
-  * If the lifetime of child containers overlaps you have to push the registration into the root container to avoid file access conflicts.
+* This can be as simple as adding ```new ContainerControlledLifetimeManager()```
+  into ```Bootstrapper.SetupChildContainer()```.
+* Think about the consequences whether you will or will not move the 
+  registration into ```Bootstrapper.SetupContainer()``` method.
+  * The point simply now is that the ```FileResultWriter``` is 
+    ```IDisposable```.
+  * Since its lifetime is now managed by the child container 
+    (```ContainerControllerLifetimeManager```) it is disposed as a part of child
+	container disposal.
+  * If the lifetime of child containers overlaps you have to push the 
+    registration into the root container to avoid file access conflicts.
+
+## Solution
 
 * For more info about the sample solution please see IoCTaskSolutions, project 
   040_UnityLifetimeManagement.
