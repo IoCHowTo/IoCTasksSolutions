@@ -23,7 +23,8 @@
 
 ## Sample solution
 
-* This is simply about lazy resolving the dependency inside the ```ConsoleResultWriter```.
+* This is simply about lazy resolving the dependency inside the 
+  ```ConsoleResultWriter```.
   * In order to do so you have to inject ```IUnityContainer``` into it.
 
 ## Solution
